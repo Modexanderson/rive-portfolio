@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mordecai — Rive Animator Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #1a1a2e;
+      background: white;
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #1a1a2e;
+      margin-bottom: 24px;
+    }
+    .name { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+    .role { font-size: 14px; color: #8b5cf6; font-weight: 500; margin-top: 3px; }
+    .contact-col {
+      display: flex; flex-direction: column; align-items: flex-end;
+      gap: 3px; font-size: 12px; color: #555;
+    }
+    .section { margin-bottom: 24px; }
+    .section h2 {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: #8b5cf6; margin-bottom: 10px;
+      padding-bottom: 5px; border-bottom: 1px solid #eee;
+    }
+    .section > p { color: #333; line-height: 1.7; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .two-col h3 { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .two-col ul { list-style: none; }
+    .two-col li {
+      font-size: 12px; color: #444; line-height: 1.6;
+      padding-left: 12px; position: relative;
+    }
+    .two-col li::before {
+      content: ""; position: absolute; left: 0; top: 8px;
+      width: 4px; height: 4px; border-radius: 50%; background: #8b5cf6;
+    }
+    .entry { margin-bottom: 14px; }
+    .entry-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .entry-head strong { font-size: 13px; }
+    .entry-head span { font-size: 11px; color: #888; font-weight: 500; }
+    .entry p { font-size: 12px; color: #555; line-height: 1.6; }
+    .tools { color: #555; line-height: 1.8; font-size: 12px; }
+    .footer {
+      margin-top: 28px; padding-top: 14px;
+      border-top: 1px solid #eee; text-align: center;
+      font-size: 12px; color: #888;
+    }
+    @media print {
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1 class="name">Mordecai</h1>
+      <p class="role">Interactive Rive Animator</p>
+    </div>
+    <div class="contact-col">
+      <span>mordecai.a.d@gmail.com</span>
+      <span>t.me/modex_anderson</span>
+      <span>Remote — Any timezone</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p>
+      Interactive animation specialist delivering production-ready Rive files
+      with robust state machine architectures. I build modular character rigs,
+      UI micro-interactions, and animation systems designed for seamless
+      runtime integration across React, React Native, Flutter, and SwiftUI.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Core Skills</h2>
+    <div class="two-col">
+      <div>
+        <h3>Rive Animation</h3>
+        <ul>
+          <li>State machine design (boolean, number, trigger inputs)</li>
+          <li>Bone-based character rigging with modular architecture</li>
+          <li>Expression libraries and swappable component systems</li>
+          <li>UI micro-interactions (buttons, toggles, loaders)</li>
+          <li>Flat vector illustration and soft-palette art direction</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Delivery &amp; Integration</h3>
+        <ul>
+          <li>React / React Native runtime integration</li>
+          <li>Flutter (rive package) integration</li>
+          <li>Web (JavaScript / TypeScript) integration</li>
+          <li>SwiftUI and iOS integration</li>
+          <li>Documented state machine inputs for dev handoff</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Selected Projects</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <strong>Interactive Character System</strong>
+        <span>Rive</span>
+      </div>
+      <p>
+        Modular character rig with state-machine-driven expressions, idle loops,
+        and cursor-aware interactive responses. Boolean inputs for hiding/showing
+        body parts, enabling animation reuse across character variants.
+      </p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <strong>App Mascot — 6 Expression States</strong>
+        <span>Rive</span>
+      </div>
+      <p>
+        Production-ready cloud character with state machine controlling 6
+        animated expression states. Delivered as editable .riv with documented
+        state machine inputs for mobile app integration.
+      </p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <strong>Avatar Pack with Emotion States</strong>
+        <span>Rive</span>
+      </div>
+      <p>
+        Set of 3 animated avatars sharing a reusable rig architecture. Each
+        avatar includes idle, happy, and sad animation states controlled by
+        boolean inputs.
+      </p>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <strong>UI Micro-interaction Library</strong>
+        <span>Rive</span>
+      </div>
+      <p>
+        Collection of production-ready UI components: toggle switches, download
+        buttons with progress states, loading indicators. All driven by state
+        machine inputs for direct app integration.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <strong>Freelance Rive Animator &amp; Interactive Designer</strong>
+        <span>2024 — Present</span>
+      </div>
+      <p>
+        15+ projects delivered for clients across mobile, web, and gaming.
+        Specializing in state-machine-driven animations with clean
+        developer handoff. 100% client satisfaction.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Tools</h2>
+    <p class="tools">
+      Rive Editor &middot; Rive State Machines &middot; Flat Vector Illustration
+      &middot; Bone Rigging &middot; Figma &middot; Git
+    </p>
+  </section>
+
+  <footer class="footer">
+    Available for freelance &middot; Fixed-price or milestone-based &middot;
+    Fast turnaround
+  </footer>
+</body>
+</html>
