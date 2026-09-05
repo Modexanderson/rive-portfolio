@@ -81,6 +81,12 @@ const projects = [
     tags: ["Hero Scene", "Editorial", "Composition"],
     riv: "/riv/maasai-event-hero.riv",
   },
+  {
+    title: "Posture Coach — Body Mechanics",
+    desc: "Interactive movement study focused on readable posture changes, pose transitions, and expressive body mechanics in Rive.",
+    tags: ["Body Mechanics", "Pose States", "Rive"],
+    riv: "/riv/posture-animation.riv",
+  },
 ];
 
 function StateMachineIcon() {
