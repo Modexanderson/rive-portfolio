@@ -63,6 +63,24 @@ const projects = [
     tags: ["Botanical", "Ambient Motion", "Rive"],
     riv: "/riv/windy-tree.riv",
   },
+  {
+    title: "Snake — Raster Motion Study",
+    desc: "Marketplace animation study with organic raster motion, useful for exploring texture-rich movement and expressive timing in Rive.",
+    tags: ["Raster", "Organic Motion", "Marketplace"],
+    riv: "/riv/snake-raster-animation.riv",
+  },
+  {
+    title: "Vintage Bike — Mechanical Motion",
+    desc: "Detailed vehicle animation study demonstrating layered mechanical movement, timing, and visual storytelling inside a Rive scene.",
+    tags: ["Mechanical", "Layered Motion", "Rive"],
+    riv: "/riv/vintage-bike-motion.riv",
+  },
+  {
+    title: "Maasai Event Hero — Editorial Scene",
+    desc: "Atmospheric hero-scene study with a strong visual composition, showing how Rive can power rich animated banners and event experiences.",
+    tags: ["Hero Scene", "Editorial", "Composition"],
+    riv: "/riv/maasai-event-hero.riv",
+  },
 ];
 
 function StateMachineIcon() {
