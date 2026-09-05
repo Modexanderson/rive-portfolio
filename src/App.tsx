@@ -1,3 +1,4 @@
+import { useState } from "react";
 import RivePlayer from "./components/RivePlayer";
 import "./App.css";
 
@@ -37,6 +38,24 @@ const projects = [
     desc: "2D character that follows the cursor and changes to 3D on click. Demonstrates advanced input-driven bone animation.",
     tags: ["Cursor Input", "Bones", "Interactive"],
     riv: "/riv/cursor-character.riv",
+  },
+  {
+    title: "Bone Character — Secondary Motion",
+    desc: "A character study focused on articulated bone movement, layered timing, and natural follow-through for lively interactions.",
+    tags: ["Bone Rig", "Secondary Motion", "Character"],
+    riv: "/riv/bones-character.riv",
+  },
+  {
+    title: "Cute Character — Arrival States",
+    desc: "A compact character system built around readable entrances, expressive idle behavior, and reusable state transitions.",
+    tags: ["Arrival", "Idle Loop", "State Machine"],
+    riv: "/riv/cute-character.riv",
+  },
+  {
+    title: "Gitty Mascot — Interactive Personality",
+    desc: "Interactive mascot showcase with cursor response and click-driven personality, designed as a reusable app character system.",
+    tags: ["Mascot", "Input Driven", "Rive"],
+    riv: "/riv/gitty-character.riv",
   },
 ];
 
@@ -179,6 +198,80 @@ function EmailIcon() {
   );
 }
 
+function BotanicalStudy() {
+  const [growth, setGrowth] = useState(68);
+  const [pulse, setPulse] = useState(false);
+
+  return (
+    <section id="botanical-study" className="botanical-study" aria-labelledby="botanical-title">
+      <div className="botanical-copy">
+        <p className="section-eyebrow">Concept Study · Rive Direction</p>
+        <h2 id="botanical-title" className="section-title">
+          A living system, not a video.
+        </h2>
+        <p className="section-desc">
+          A small interaction study for a data-driven tree: growth is a number,
+          arrival is a trigger, and ambient life keeps running underneath.
+        </p>
+        <div className="botanical-controls">
+          <label htmlFor="growth-range">
+            <span>Growth progress</span>
+            <strong>{growth}%</strong>
+          </label>
+          <input
+            id="growth-range"
+            type="range"
+            min="0"
+            max="100"
+            value={growth}
+            onChange={(event) => setGrowth(Number(event.target.value))}
+          />
+          <button
+            type="button"
+            className="botanical-pulse"
+            aria-pressed={pulse}
+            onClick={() => setPulse(true)}
+          >
+            Send a light pulse
+          </button>
+        </div>
+        <div className="botanical-inputs" aria-label="Proposed Rive inputs">
+          <span><i className="input-dot input-number" />growthProgress</span>
+          <span><i className="input-dot input-trigger" />pulse</span>
+          <span><i className="input-dot input-boolean" />ambientIdle</span>
+        </div>
+      </div>
+      <div className={`botanical-stage ${pulse ? "is-pulsing" : ""}`}>
+        <div className="botanical-stars" />
+        <div className="botanical-glow" style={{ opacity: growth / 150 }} />
+        <svg className="botanical-tree" viewBox="0 0 520 440" role="img" aria-label="Interactive concept tree">
+          <defs>
+            <linearGradient id="trunkGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#8e6547" />
+              <stop offset="0.55" stopColor="#bd8d5b" />
+              <stop offset="1" stopColor="#4d3831" />
+            </linearGradient>
+            <filter id="leafShadow"><feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#090b0c" floodOpacity="0.7" /></filter>
+          </defs>
+          <path className="tree-ground" d="M64 398 Q260 370 456 398" />
+          <g className="tree-branches" style={{ transform: `scaleY(${0.62 + growth / 265})`, transformOrigin: "260px 390px" }}>
+            <path className="tree-trunk" d="M255 396 C244 342 252 292 245 244 C237 190 204 157 161 128 M248 252 C282 206 327 173 388 151 M244 309 C205 269 150 250 101 238 M251 214 C264 158 261 112 239 68" />
+            <path className="tree-trunk thin" d="M162 128 C140 102 119 91 96 85 M388 151 C414 121 438 111 464 111 M101 238 C78 218 63 202 51 181 M239 68 C227 45 218 31 204 19" />
+          </g>
+          <g className="tree-canopy" style={{ opacity: Math.max(0.12, growth / 100) }} filter="url(#leafShadow)">
+            <ellipse cx="96" cy="78" rx="38" ry="21" /><ellipse cx="157" cy="124" rx="48" ry="25" />
+            <ellipse cx="389" cy="145" rx="55" ry="28" /><ellipse cx="465" cy="106" rx="35" ry="19" />
+            <ellipse cx="100" cy="233" rx="48" ry="24" /><ellipse cx="51" cy="177" rx="28" ry="16" />
+            <ellipse cx="238" cy="61" rx="38" ry="22" /><ellipse cx="204" cy="18" rx="24" ry="13" />
+          </g>
+          <circle className="tree-pulse" cx="245" cy="244" r="7" />
+        </svg>
+        <div className="botanical-status"><span /> Live concept · {growth < 40 ? "Dormant" : growth < 75 ? "Growing" : "Full canopy"}</div>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -192,6 +285,7 @@ export default function App() {
           <div className="nav-links">
             <a href="#work">Work</a>
             <a href="#services">Services</a>
+            <a href="#botanical-study">Tree Study</a>
             <a href="#process">Process</a>
             <a href="#contact" className="nav-cta">
               Let's Talk
@@ -239,6 +333,8 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <BotanicalStudy />
 
       {/* Work */}
       <section id="work" className="section">

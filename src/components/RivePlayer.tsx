@@ -8,12 +8,12 @@ interface RivePlayerProps {
 
 export default function RivePlayer({
   src,
-  stateMachine = "State Machine 1",
+  stateMachine,
   artboard,
 }: RivePlayerProps) {
   const { RiveComponent } = useRive({
     src,
-    stateMachines: stateMachine,
+    ...(stateMachine ? { stateMachines: stateMachine } : {}),
     artboard,
     autoplay: true,
     layout: new Layout({
