@@ -57,6 +57,12 @@ const projects = [
     tags: ["Mascot", "Input Driven", "Rive"],
     riv: "/riv/gitty-character.riv",
   },
+  {
+    title: "Windy Tree — Ambient Motion",
+    desc: "A real Rive tree asset with organic wind motion, ideal for studying painterly vegetation, ambient sway, and calm idle life.",
+    tags: ["Botanical", "Ambient Motion", "Rive"],
+    riv: "/riv/windy-tree.riv",
+  },
 ];
 
 function StateMachineIcon() {
@@ -348,7 +354,7 @@ export default function App() {
           {projects.map((p) => (
             <article key={p.title} className="project-card">
               <div className="project-preview">
-                <RivePlayer src={p.riv} />
+                <RivePlayer src={p.riv!} />
                 <span className="project-interact">
                   Interactive — hover & click
                 </span>
